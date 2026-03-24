@@ -6,7 +6,13 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-client = anthropic.Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
+# Use OpenRouter API with Anthropic SDK
+client = anthropic.Anthropic(
+    api_key=os.getenv("OPENROUTER_API_KEY"),
+    base_url="https://openrouter.ai/api/v1",
+)
+
+MODEL = os.getenv("OPENROUTER_MODEL", "anthropic/claude-3-5-sonnet")
 
 
 def generate_section_content(topic: str, section_title: str, doc_type: str) -> str:
@@ -38,7 +44,7 @@ Do NOT include the section title in your response.
 Write in a clear, professional business writing style."""
 
     message = client.messages.create(
-        model="claude-sonnet-4-20250514",
+        model=MODEL,
         max_tokens=1000,
         messages=[
             {"role": "user", "content": prompt}
@@ -73,7 +79,7 @@ Maintain the same format (bullet points for slides, paragraphs for documents).
 Return ONLY the rewritten content, nothing else."""
 
     message = client.messages.create(
-        model="claude-sonnet-4-20250514",
+        model=MODEL,
         max_tokens=1000,
         messages=[
             {"role": "user", "content": prompt}
