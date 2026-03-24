@@ -18,29 +18,35 @@ def generate_all_content(
     current_user: models.User = Depends(get_current_user)
 ):
     """Generate AI content for ALL sections of a project"""
-    project = db.query(models.Project).filter(
-        models.Project.id == project_id,
-        models.Project.owner_id == current_user.id
-    ).first()
+    try:
+        project = db.query(models.Project).filter(
+            models.Project.id == project_id,
+            models.Project.owner_id == current_user.id
+        ).first()
 
-    if not project:
-        raise HTTPException(status_code=404, detail="Project not found")
+        if not project:
+            raise HTTPException(status_code=404, detail="Project not found")
 
-    # Generate content for each section one by one
-    for section in project.sections:
-        generated_text = generate_section_content(
-            topic=project.topic,
-            section_title=section.title,
-            doc_type=project.doc_type
-        )
-        section.content = generated_text
-        section.revision_history = []  # Reset history on new generation
+        # Generate content for each section (Groq has high rate limits, no delay needed)
+        for section in project.sections:
+            generated_text = generate_section_content(
+                topic=project.topic,
+                section_title=section.title,
+                doc_type=project.doc_type
+            )
+            section.content = generated_text
+            section.revision_history = []  # Reset history on new generation
 
-    db.commit()
+        db.commit()
 
-    # Return updated project
-    db.refresh(project)
-    return {"message": "Content generated", "project_id": project_id}
+        # Return updated project
+        db.refresh(project)
+        return {"message": "Content generated", "project_id": project_id}
+    except HTTPException:
+        raise
+    except Exception as e:
+        print(f"[AI Routes] Error generating content: {e}")
+        raise HTTPException(status_code=500, detail=f"Generation failed: {str(e)}")
 
 
 @router.post("/refine", response_model=schemas.SectionOut)

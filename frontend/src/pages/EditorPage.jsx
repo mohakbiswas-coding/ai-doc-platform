@@ -40,7 +40,9 @@ export default function EditorPage() {
       await api.post(`/ai/generate/${projectId}`);
       await fetchProject(); // Reload with new content
     } catch (err) {
-      alert("Generation failed. Check your API key.");
+      const errorMessage = err.response?.data?.detail || err.message || "Generation failed. Check your API key.";
+      alert(`Generation failed: ${errorMessage}`);
+      console.error("Generation error:", err);
     } finally {
       setGenerating(false);
     }

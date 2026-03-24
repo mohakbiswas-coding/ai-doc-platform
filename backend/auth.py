@@ -20,7 +20,7 @@ ALGORITHM = os.getenv("ALGORITHM", "HS256")
 ACCESS_TOKEN_EXPIRE_MINUTES = int(os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES", 10080))
 
 # This handles password hashing
-pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+pwd_context = CryptContext(schemes=["argon2"], deprecated="auto")
 
 # This tells FastAPI where to find the token (in the Authorization header)
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="auth/login")
