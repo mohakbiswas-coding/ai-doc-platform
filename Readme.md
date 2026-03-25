@@ -281,14 +281,6 @@ GROQ_MODEL=llama-3.2-90b-vision-preview
 
 ---
 
-## 🎓 Learning Resources
-
-- **Full Documentation**: [AI_Document_Platform_Guide.md](./AI_Document_Platform_Guide.md)
-- **API Documentation**: Available at `http://localhost:8000/docs` (when running locally)
-- **Video Tutorials**: Coming soon
-
----
-
 ##  Acknowledgments
 
 - **Groq** - For providing free, ultra-fast AI
