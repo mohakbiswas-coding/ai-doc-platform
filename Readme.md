@@ -20,15 +20,15 @@ Whether you're creating a product launch strategy, digital transformation roadma
 
 ## 🤖 AI Models Used
 
-### **Groq - Llama 3.2 90B Vision Preview**
+### **Qwen3-32B**
 - **What it does**: Understands your project description and generates high-quality, professional content
-- **Why we chose it**: Ultra-fast responses, completely free with generous rate limits (500+ requests/minute)
-- **Quality**: Enterprise-grade language model trained on billions of documents
-- **Cost**: ✅ FREE with no paid tier required
+- **Why we chose it**: Fast and efficient responses with excellent quality for document generation
+- **Quality**: Advanced language model optimized for content creation and writing tasks
+- **Cost**: ✅ Reliable and cost-effective
 
 ### **How it works**:
 1. You describe what document you need
-2. Groq's AI analyzes your request
+2. Qwen3-32B analyzes your request
 3. Professional content is generated in seconds
 4. You can refine and improve any section
 
@@ -41,7 +41,7 @@ Whether you're creating a product launch strategy, digital transformation roadma
 - **Python 3.9+** - Programming language
 - **SQLAlchemy** - Database management
 - **SQLite** - Lightweight database for storing user data
-- **Groq API** - AI content generation
+- **Qwen3-32B API** - AI content generation
 - **JWT** - Secure user authentication
 
 ### **Frontend (User Interface)**
