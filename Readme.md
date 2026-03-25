@@ -209,7 +209,7 @@ ai-doc-platform/
 
 Want to see DocAI in action? Watch our complete walkthrough:
 
-[![DocAI Demo Video](./Demo_Videos/demo_video.mp4)](./Demo_Videos/demo_video.mp4)
+[![DocAI Demo Video](./Demo_Videos/demo_video.mp4)](https://drive.google.com/file/d/1J_3F6wcTb2Jw86-FfSYSZehbFZ0tKSSf/view?usp=sharing)
 
 **What you'll see**:
 - Creating a new project
@@ -281,15 +281,6 @@ GROQ_MODEL=llama-3.2-90b-vision-preview
 
 ---
 
-## 📞 Support & Feedback
-
-- **Questions?** Check our [FAQ](./AI_Document_Platform_Guide.md)
-- **Found a bug?** Report it on GitHub Issues
-- **Have ideas?** We'd love to hear your feedback!
-- **Email**: support@docai.com (coming soon)
-
----
-
 ## 🎓 Learning Resources
 
 - **Full Documentation**: [AI_Document_Platform_Guide.md](./AI_Document_Platform_Guide.md)
@@ -298,13 +289,7 @@ GROQ_MODEL=llama-3.2-90b-vision-preview
 
 ---
 
-## 📄 License
-
-This project is licensed under the MIT License - see LICENSE file for details.
-
----
-
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 - **Groq** - For providing free, ultra-fast AI
 - **FastAPI** - For the amazing web framework
@@ -322,16 +307,6 @@ This project is licensed under the MIT License - see LICENSE file for details.
 - ☐ Desktop app
 - ☐ Integration with Google Docs, Microsoft Teams
 - ☐ Advanced analytics
-
----
-
-## 💬 What Users Say
-
-*"DocAI saved me 10 hours on my digital transformation strategy. The quality is impressive!"* - Sarah, Strategy Manager
-
-*"I use it for every client proposal. It's a game-changer for my consulting business."* - Mike, Management Consultant
-
-*"Finally, an easy way to create employee handbooks without hiring an HR consultant."* - Lisa, HR Director
 
 ---
 
